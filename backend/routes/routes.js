@@ -206,7 +206,7 @@ routes.get("/get-contacts/:id", async function(req, res) {
 
 
 
-routes.use("/deletingSingleContact", function(req, res, next){
+routes.use("/deleteSingleContact", function(req, res, next){
     try {
         let verified = jwt.verify(req.headers.token, config.secret)
 
@@ -220,7 +220,7 @@ routes.use("/deletingSingleContact", function(req, res, next){
         res.status(500)
         res.send("Failure")
         throw err
-    }   
+    }
 })
 
 routes.post("/deleteSingleContact", async function(req, res) {
